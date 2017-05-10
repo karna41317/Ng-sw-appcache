@@ -1,0 +1,43 @@
+<!doctype html>
+<html manifest="index.appcache">
+
+<head>
+
+  <script>
+    function check() {
+      //var test = false;
+      //if(test){
+      if ('serviceWorker' in navigator) {
+        console.log('service worker supported');
+        setTimeout(function(){
+          window.location = "app.html";
+        }, 1000);
+
+      } else {
+
+        console.log("service worker not supported");
+        var ins = document.body;
+        var ifme = document.createElement('iframe');
+        ifme.setAttribute('src', 'appcache.html');
+        ifme.setAttribute('width', '0');
+        ifme.setAttribute('height', '0');
+        ifme.setAttribute('style', 'visibility: hidden');
+        ins.appendChild(ifme);
+        setTimeout(function(){
+          window.location = "app.html";
+        }, 1000);
+
+      }
+
+
+    }
+  </script>
+</head>
+
+<body onload=check()>
+  <p>Loading and staging ... Please wait</p>
+
+
+</body>
+
+</html>

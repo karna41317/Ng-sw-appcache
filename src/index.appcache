@@ -1,0 +1,11 @@
+CACHE MANIFEST
+index.html
+# eabe5150d7501e92fa32d2fce2c2de4f
+
+# Use from network if available
+NETWORK:
+
+
+# Fallback content
+FALLBACK:
+/ index.html
